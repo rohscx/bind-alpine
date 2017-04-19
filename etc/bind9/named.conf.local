@@ -1,9 +1,0 @@
-zone "donkeyballs.net" {
-    type master;
-    file "/etc/bind/db.donkeyballs.net";
-};
-zone "0.42.10.in-addr.arpa" {
-        type master;
-        notify no;
-        file "/etc/bind/db.10";
-};
