@@ -4,7 +4,7 @@ MAINTAINER Rohscx <emailaddress.com>
 
 RUN apk update
 
-RUN apk bind
+RUN apk add bind
 
 RUN apk add bash-completion
 
