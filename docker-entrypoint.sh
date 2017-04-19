@@ -33,8 +33,9 @@ initConfig() {
   if [ ! "$(ls --ignore .keys --ignore .authoritative --ignore .recursive --ignore -A ${BIND_DNS_HOME})"  ]; then
     cp -r ${BIND_DNS_HOME}/${BIND_DNS_OG_CFG} ${BIND_DNS_HOME}/${BIND_DNS_NEW_CFG}
     sed -i "s,//forwarders {,forwarders {," ${BIND_DNS_HOME}/named.conf
-    sed -i -e  "s,//[[:space:]]123.123.123.123;,8.8.8.8," ${BIND_DNS_HOME}/named.conf
-    sed -r -e '1,/(\b[8]\.){2}([4]\.){1}[4]/s/(\b[8]\.){2}([4]\.){1}[4]/8.8.8.8/' ${BIND_DNS_HOME}/named.conf > ${BIND_DNS_HOME}/named.conf
+    sed -i -e  "s,//[[:space:]]123.123.123.123;,8.8.4.4," ${BIND_DNS_HOME}/named.conf
+    sed -r -e '1,/(\b[8]\.){2}([4]\.){1}[4]/s/(\b[8]\.){2}([4]\.){1}[4]/8.8.8.8/' ${BIND_DNS_HOME}/named.conf >${BIND_DNS_HOME}/named.tmp
+    mv ${BIND_DNS_HOME}/named.tmp ${BIND_DNS_HOME}/named.conf
     sed -i "s,//};,};," ${BIND_DNS_HOME}/named.conf
   else
     echo "BIND configuration already initialized........."
