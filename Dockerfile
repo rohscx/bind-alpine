@@ -8,4 +8,8 @@ RUN apk bind
 
 RUN apk add bash-completion
 
+ENTRYPOINT [ "/docker-entrypoint.sh" ]
+
+CMD [ "-s" ]
+
 EXPOSE  53
