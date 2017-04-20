@@ -37,7 +37,7 @@ initConfig() {
     sed -r -e "1,/(\b[8]\.){2}([4]\.){1}[4]/s/(\b[8]\.){2}([4]\.){1}[4]/${BIND_DNS_SERVER_1}/" ${BIND_DNS_HOME}/named.conf >${BIND_DNS_HOME}/named.tmp
     mv ${BIND_DNS_HOME}/named.tmp ${BIND_DNS_HOME}/named.conf
     sed -i "s,//};,};," ${BIND_DNS_HOME}/named.conf
-    cat ${BIND_DNS_HOME}/named.conf 
+    sed -i "s,127.0.0.1;,any;," ${BIND_DNS_HOME}/named.conf 
   else
     echo "BIND configuration already initialized........."
   fi
