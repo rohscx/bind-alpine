@@ -4,6 +4,8 @@ services:
     image: rohscx/bind-alpine
     ports:
         - "53:53/udp"
+    env_file:
+      - .bind.env
     deploy:
       mode: replicated
       replicas: 1
