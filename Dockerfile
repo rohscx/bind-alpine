@@ -12,7 +12,7 @@ COPY docker-entrypoint.sh /docker-entrypoint.sh
 
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
 
-RUN chmod 755 /sbin/entrypoint.sh
+RUN chmod 755 /docker-entrypoint.sh
 
 CMD [ "-s" ]
 
