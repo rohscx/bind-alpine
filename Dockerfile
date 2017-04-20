@@ -12,6 +12,8 @@ COPY docker-entrypoint.sh /docker-entrypoint.sh
 
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
 
+RUN chmod 755 /sbin/entrypoint.sh
+
 CMD [ "-s" ]
 
 EXPOSE  53
