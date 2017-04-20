@@ -16,4 +16,4 @@ RUN chmod 755 /docker-entrypoint.sh
 
 CMD [ "-s" ]
 
-EXPOSE  53
+EXPOSE  53 53/udp
