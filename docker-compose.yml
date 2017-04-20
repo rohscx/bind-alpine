@@ -1,0 +1,13 @@
+version: "3"
+services:
+  dns:
+    image: rohscx/bind-alpine
+    ports:
+        - "udp/53:udp/53"
+    deploy:
+      mode: replicated
+      replicas: 1
+    networks:
+      - DNS
+networks:
+  DNS:
