@@ -24,7 +24,7 @@ usage() {
   echo "-f: Start BIND in foreground with existing configuration."
   echo "-h: Show this help."
   
-  echo "-s: Initialize environment like -i and start OpenNMS in foreground." !!!!!
+  echo "-s: Initialize environment like -i and start BIND in foreground." !!!!!
   echo ""
 }
 
