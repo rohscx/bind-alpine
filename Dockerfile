@@ -8,6 +8,8 @@ RUN apk add bind
 
 RUN apk add bash-completion
 
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
 
 CMD [ "-s" ]
